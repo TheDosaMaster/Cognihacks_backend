@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/chatbot.html",
+      "destination": "/templates/chatbot.html"
+    }
+  ]
+}
