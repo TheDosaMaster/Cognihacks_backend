@@ -17,7 +17,7 @@ def home():
         username = request.form.get('username')
         password = request.form.get('password') 
 
-        return render_template('chatbot.html', username=username , password=password) 
+        return render_template('templates/chatbot.html', username=username , password=password) 
     return render_template('index.html')
 
 @app.route('/chatbot', methods=['POST', 'GET']) 
@@ -34,7 +34,7 @@ def chatbot():
             conversationinfo = f"{user_message} refer to the past conversation for context {str(messages)} also if the user specifies /walkthrough then just explain the problem with steps, not directly providing an answer. Always return LaTeX math as $$...$$ for display math. "
         print(conversationinfo)
         response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-5",
         messages=[
             {"role": "user", "content": conversationinfo}
         ]
